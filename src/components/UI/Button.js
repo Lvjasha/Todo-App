@@ -1,8 +1,11 @@
-function Button() {
+import styles from './Button.module.css';
+
+function Button(props) {
+    const { children, disabled = false } = props;
     return (
-        <div>
-            <button type="submit">Button</button>
-        </div>
+        <button {...props} className={styles.button} disabled={disabled}>
+            {children}
+        </button>
     );
 }
 
